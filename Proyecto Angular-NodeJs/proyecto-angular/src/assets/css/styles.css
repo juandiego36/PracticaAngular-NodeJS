@@ -1,0 +1,114 @@
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+/*Importar fuentes */
+@font-face{
+    font-family: "yanone";
+    src: url("fonts/yanone.ttf")
+}
+@font-face{
+    font-family: "finger";
+    src: url("fonts/finger.ttf")
+}
+
+
+/*Estilos generales*/
+
+.clean{
+    clear: both;
+    float: none;
+}
+
+body{
+    font-family: "yanone", Arial, Helvetica;
+    font-size: 20px;
+    background-image: url('../img/pattern.png');
+    background-attachment: fixed;/*ya vere que hace*/
+}
+
+
+header{
+    width: 100%;
+    height: 90px;
+    position: fixed; /*ya vere que hace*/
+    display: block;  /*ya vere que hace*/
+    background: rgba(53, 103, 164, 0.8);
+    text-transform: uppercase;
+
+}
+
+header ul{
+    display: block;
+    height: inherit; /*Heredado del padre*/
+    margin: 0px auto;
+    width: 45%;
+    margin-top: -4px;
+    padding: 0px;
+    text-align:center;/*Centra multiples elementos dentro de este*/
+    position:relative;
+
+}
+
+header ul li{
+    display: inline-block;
+    text-align: center;
+    line-height: 88px;
+}
+
+header a{
+    display: block;
+    text-decoration: none;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: white;
+    height: inherit;
+    transition: all 300ms;
+}
+
+header a:hover, .actived{
+    background: rgba(0,0,0,0.8);
+    border-radius: 2px;
+}
+#logo{
+    font-family: "finger", Arial, Helvetica;
+    font-size: 30px;
+}
+
+#logo a:hover{
+    background: transparent;
+}
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/*Contenedor*/
+
+#content{
+    padding-top: 75px;
+    min-height: 700px;
+    width: 75%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    background: rgba(255, 255, 255, 0.7);
+    margin-top: 140px;
+    padding: 7%;
+}
+
+/*Pie de pagina*/
+footer{
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: rgba(0,0,0,0.5);
+}
+
+
+.message{
+    color: red;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

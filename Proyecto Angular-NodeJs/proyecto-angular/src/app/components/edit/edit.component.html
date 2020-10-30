@@ -1,0 +1,28 @@
+
+                <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+                    <p>
+                        <input required pattern="[A-Z][A-Za-z ]+" 
+                        type="text" #name="ngModel" name="name" [(ngModel)] = "editInput.project.name"> 
+                        <span class="message" *ngIf="name.touched && !name.valid">El nombre es obligatorio</span>
+                    </p>
+            
+                    <p>
+                        <textarea required name="description" #description="ngModel" [(ngModel)] = "editInput.project.description"></textarea>
+                        <span class="message" *ngIf="description.touched && !description.valid">La descripcion es obligatoria</span>
+                    </p>
+                    <p>
+                        <input required type="text" name="category" #category="ngModel" [(ngModel)] = "editInput.project.category"> 
+                        <span class="message" *ngIf="category.touched && !category.valid">La categoria es obligatoria</span>
+                    </p>
+                    <p>
+                        <input required pattern="([0-9]+[\/-]?)+"  type="date" name="year" #year="ngModel" [(ngModel)] = "editInput.project.year">
+                        <span class="message" *ngIf="year.touched && !year.valid" >La fecha es obligatoria</span>
+                    </p>
+                    <p>
+                        <input required type="text" name="langs" #langs="ngModel" [(ngModel)] = "editInput.project.langs">
+                        <span class="message" *ngIf="langs.touched && !langs.valid">Los lenguajes son obligatorios</span> 
+                    </p>
+                   <p>
+                       <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+                   </p>
+                </form>

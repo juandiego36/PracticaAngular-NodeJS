@@ -1,0 +1,60 @@
+
+p, label{
+    display: block;
+}
+h2{
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+form{
+    width: 70%;
+    padding: 20px;
+}
+input[type = "text"],input[type = "date"], input[type = "file"], textarea, label, span{
+    font-size: 20px;
+    min-height: 20px;
+}
+label{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+input[type = "text"],input[type = "date"], textarea{
+    width: 50%;
+    padding-left: 3px;
+    padding: 5px
+}
+input[type = "submit"]{
+    font-size: 25px;
+    padding: 10px;
+    display: block;
+    color: white;
+    background: rgba(53, 103, 164, 1);
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms;
+    width: 25%;
+    margin: 0px auto;
+    margin-top: 15px;
+}
+
+input[type = "submit"]:hover{
+    background: rgba(0,0,0,0.8);
+}
+
+form input[disabled]{
+   background: rgba(0,0,0,0.8);
+}
+form input[disabled]:hover{
+    background: rgba(0,0,0,0.8);
+    cursor: not-allowed;
+ }
+
+ 
+span{
+    margin-left: 15px;
+}

@@ -1,0 +1,54 @@
+<div id="container">
+    <h2>{{title}}</h2>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input required pattern="[A-Z][A-Za-z ]+" 
+            type="text" #name="ngModel" name="name" [(ngModel)] = "project.name"> 
+            <!--
+            name es como un id pero se puede usar en grupos
+            [(ngModel)] es una directiva se utiliza para el 2 way data binding, este va a estar vinculado con la propiedad que le pongan
+            En html para validar campos estas las propiedades required, pattern, maxlenght, max, min
+            Angular permite crear variables mediante el # como #name a la cual se le pueden asignar la directiva ngModel para poder usar atributos como touced, pristine, valid
+            -->
+            <span class="message" *ngIf="name.touched && !name.valid">El nombre es obligatorio</span>
+        </p>
+
+        <p>
+            <label for="description">Descripcion</label>
+            <textarea required name="description" #description="ngModel" [(ngModel)] = "project.description"></textarea>
+            <span class="message" *ngIf="description.touched && !description.valid">La descripcion es obligatoria</span>
+        </p>
+        <p>
+            <label required for="category">Categoria</label>
+            <input required type="text" name="category" #category="ngModel" [(ngModel)] = "project.category"> 
+            <span class="message" *ngIf="category.touched && !category.valid">La categoria es obligatoria</span>
+        </p>
+        <p>
+            <label required for="year">Fecha</label>
+            <input required pattern="([0-9]+[\/-]?)+"  type="date" name="year" #year="ngModel" [(ngModel)] = "project.year">
+            <span class="message" *ngIf="year.touched && !year.valid" >La fecha es obligatoria</span>
+        </p>
+        <p>
+            <label for="langs">Lenguajes</label>
+            <input required type="text" name="langs" #langs="ngModel" [(ngModel)] = "project.langs">
+            <span class="message" *ngIf="langs.touched && !langs.valid">Los lenguajes son obligatorios</span> 
+        </p>
+        <p>
+            <label pattern="[0-9]" for="image">Imagen</label>
+            <input type="file"  name="image" placeholder="Subir Imagen" (change)="fileChangeEvent($event)"> 
+           
+        </p>
+       <p>
+           <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+       </p>
+    </form>
+
+    <div *ngIf="message">
+        <span class="message">{{message}}</span>
+        <p> Para ver el nuevo proyecto haga click <a [routerLink]=" ['/proyecto', id ]" target="_blank">AQUI</a></p>
+    </div>
+
+  
+</div>
+

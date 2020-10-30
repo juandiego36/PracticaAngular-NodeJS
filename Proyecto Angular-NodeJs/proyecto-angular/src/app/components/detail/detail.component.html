@@ -1,0 +1,30 @@
+<div id="component">
+    <div id="info">
+        <img src="{{url+'/get-image/'+project.image}}">
+
+        <div id="box">
+            <div id="info" *ngIf="!ifEdit">
+                <p>{{project.name}}</p>
+                <p>{{project.year}}</p>
+                <p>{{project.category}}</p>
+                <p>{{project.description}}</p>
+            </div>
+
+            <div id="edit" *ngIf="ifEdit">
+                <app-edit [editInput]="editInput" (editOutput)="editOutput($event)"></app-edit>
+            </div>
+
+            <div id="buttons">
+                <button id="delete" (click)="deleteProject()">Eliminar</button>
+                <button id="edit" #edit (click)="editProject()"> Editar</button>
+            </div>
+        </div>
+
+         <!--
+             <app-message [messageDetails]="messageDetails"></app-message>
+             <span id="spanMessage" class="message"></span>
+         --> 
+        
+
+    </div>
+</div>

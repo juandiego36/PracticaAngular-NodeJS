@@ -1,0 +1,23 @@
+
+
+<div id="container">
+    <div id="search-bar">
+        <input type="string" placeholder="Nombre del proyecto" [(ngModel)] = "name" (ngModelChange)="getProyects()">
+    </div>    
+    <div id="projects">
+        <div *ngIf="projects.length == 0" class="message">
+            <span>No se han encontrado elementos</span>
+        </div>
+        <ul>
+            <li *ngFor="let project of projects; let indice = index">
+                <a [routerLink]=" ['/proyecto', project._id]">
+                    <img src="{{url+'/get-image/'+project.image}}">
+                    <p>{{project.name}}</p>
+                    <p>{{project.year}}</p>
+                </a>
+            </li>
+        </ul>
+        <div class="clean"></div>
+    </div>
+
+</div>

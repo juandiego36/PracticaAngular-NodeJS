@@ -1,0 +1,19 @@
+<h1>Proyecto Angular</h1>
+
+<header>
+  <ul>
+    <li><a [routerLink]="['sobre-mi']" routerLinkActive="actived">Sobre Mi</a></li>
+    <li><a [routerLink]="['contacto']" routerLinkActive="actived">Contacto</a></li>
+    <li id="logo"><a href="#">JD</a></li>
+    <li><a [routerLink]="['proyectos']" routerLinkActive="actived">Proyectos</a></li>
+    <li><a [routerLink]="['crear-proyectos']" routerLinkActive="actived">Crear Proyectos</a></li>
+  </ul>
+</header>
+<div class="clearfix"></div>
+<section id="content">
+  <router-outlet></router-outlet> <!--Llena la pagina segun la ruta en la que se este-->
+</section>
+
+<footer>
+  Proyecto JavaScript Juan Diego Chaves Rodrguez 
+</footer>

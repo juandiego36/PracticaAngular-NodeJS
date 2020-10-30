@@ -1,0 +1,32 @@
+@font-face{
+    font-family: "finger";
+    src: url("../../../assets/css/fonts/finger.ttf")
+}
+
+div{
+    text-align: center;
+}
+
+#title{
+    margin-bottom: 50px;
+}
+#title h1{
+    font-family: "finger", Arial, Helvetica;
+    text-transform: uppercase;
+    font-size: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#title hr{
+    width: 75%;
+    margin: 0px auto;
+}
+
+#about h2{
+    font-size: 45px;
+}
+
+#about p{
+    text-align: justify;
+}
