@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const dbURL = require('./properties').DB;
 
-
+//me decia que la otra opcion estaba descontinuada
 mongoose.set('useCreateIndex', true);
+
+
 module.exports = () => {
   mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log(`Mongo connected on ${dbURL}`))
