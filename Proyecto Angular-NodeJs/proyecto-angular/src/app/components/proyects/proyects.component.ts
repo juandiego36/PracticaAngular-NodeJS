@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProyectService } from '../../services/proyect.service'
 import { Project } from '../../models/project.model' 
 import { Global } from '../../services/global.service'
+import { MatDialog } from '@angular/material/dialog'
+import { MessageComponent } from '../message/message.component';
 
 @Component({
   selector: 'app-proyects',
@@ -17,7 +19,8 @@ export class ProyectsComponent implements OnInit {
   public url:string
   
   constructor(
-    private _proyectService:ProyectService
+    private _proyectService:ProyectService,
+    private _dialog:MatDialog
   ) 
   {
     this.projects = []
@@ -40,9 +43,19 @@ export class ProyectsComponent implements OnInit {
           }
       },
       (error)=>{
-        this.projects = error
+        this.doDialog("Ocurrio un error, no se pudieron cargar los proyectos")
       }
     )
   }
+
+  doDialog(message:string):void{
+    const dialogRef = this._dialog.open(MessageComponent,{
+      data: message,
+      
+    })
+    dialogRef.afterClosed().subscribe((res=>{
+      
+    }))
+  }  
 
 }
